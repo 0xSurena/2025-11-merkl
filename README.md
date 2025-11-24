@@ -45,7 +45,13 @@ In such cases, the recipient contract could redirect or capture the user's rewar
 
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+Merkl is a DeFi incentive platform that **connects liquidity providers with protocols** looking to boost activity and engagement.
+
+- For Protocols: Launch, manage, and customize growth campaigns to attract liquidity, track user engagement, and distribute incentives without the usual operational burden.
+
+- For Users: Earn rewards or points by participating in incentive campaigns.
+
+At its core, Merkl operates on an offchain engine that processes both onchain and offchain data to compute rewards and points for campaigns.
 
 ## Links
 
@@ -58,84 +64,36 @@ In such cases, the recipient contract could redirect or capture the user's rewar
 
 # Scope
 
-*See [scope.txt](https://github.com/code-423n4/2025-11-merkl/blob/main/scope.txt)*
-
 ### Files in scope
 
 
-| File   | Logic Contracts | Interfaces | nSLOC | Purpose | Libraries used |
-| ------ | --------------- | ---------- | ----- | -----   | ------------ |
-| /contracts/DistributionCreator.sol | 1| **** | 333 | |@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol<br>@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>@openzeppelin/contracts/utils/cryptography/ECDSA.sol|
-| /contracts/Distributor.sol | 1| **** | 271 | |@openzeppelin/contracts/token/ERC20/IERC20.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>@openzeppelin/contracts/utils/math/SafeCast.sol|
-| **Totals** | **2** | **** | **604** | | |
+| File   | nSLOC |
+| ------ | ----- |
+|[contracts/DistributionCreator.sol](https://github.com/code-423n4/2025-11-merkl/blob/main/contracts/DistributionCreator.sol)| 333 |
+|[contracts/Distributor.sol](https://github.com/code-423n4/2025-11-merkl/blob/main/contracts/Distributor.sol)| 271 |
+|**Totals**| **604** |
+
+*For a machine-readable version, see [scope.txt](https://github.com/code-423n4/2025-11-merkl/blob/main/scope.txt)*
 
 ### Files out of scope
 
-*See [out_of_scope.txt](https://github.com/code-423n4/2025-11-merkl/blob/main/out_of_scope.txt)*
-
 | File         |
 | ------------ |
-| ./contracts/AccessControlManager.sol |
-| ./contracts/Disputer.sol |
-| ./contracts/DistributionCreatorWithDistributions.sol |
-| ./contracts/ReferralRegistry.sol |
-| ./contracts/interfaces/IAccessControlManager.sol |
-| ./contracts/interfaces/IClaimRecipient.sol |
-| ./contracts/mock/DistributionCreatorUpdatable.sol |
-| ./contracts/mock/MockAccessControl.sol |
-| ./contracts/mock/MockClaimRecipient.sol |
-| ./contracts/mock/MockPool.sol |
-| ./contracts/mock/MockToken.sol |
-| ./contracts/mock/MockTokenPermit.sol |
-| ./contracts/mock/MockUniswapV3Pool.sol |
-| ./contracts/partners/middleman/MerklGaugeMiddlemanTemplate.sol |
-| ./contracts/partners/tokenWrappers/NativeTokenWrapper.sol |
-| ./contracts/partners/tokenWrappers/PointToken.sol |
-| ./contracts/partners/tokenWrappers/PufferPointTokenWrapper.sol |
-| ./contracts/partners/tokenWrappers/PullTokenWrapperAllow.sol |
-| ./contracts/partners/tokenWrappers/PullTokenWrapperTransfer.sol |
-| ./contracts/partners/tokenWrappers/PullTokenWrapperTransferV0.sol |
-| ./contracts/partners/tokenWrappers/PullTokenWrapperWithdraw.sol |
-| ./contracts/partners/tokenWrappers/SonicFragment.sol |
-| ./contracts/partners/tokenWrappers/TokenTGEWrapper.sol |
-| ./contracts/struct/CampaignParameters.sol |
-| ./contracts/struct/DistributionParameters.sol |
-| ./contracts/struct/RewardTokenAmounts.sol |
-| ./contracts/utils/Errors.sol |
-| ./contracts/utils/UUPSHelper.sol |
-| ./scripts/AccessControlManager.s.sol |
-| ./scripts/Disputer.s.sol |
-| ./scripts/DistributionCreator.s.sol |
-| ./scripts/Distributor.s.sol |
-| ./scripts/MockToken.s.sol |
-| ./scripts/PointToken.s.sol |
-| ./scripts/deployCreateX.s.sol |
-| ./scripts/deployPufferPointTokenWrapper.s.sol |
-| ./scripts/deployPullTokenWrapper.s.sol |
-| ./scripts/deployPullTokenWrapperTransfer.s.sol |
-| ./scripts/deployReferralRegistry.s.sol |
-| ./scripts/deploySonicFragment.s.sol |
-| ./scripts/deployTokenTGEWrapper.s.sol |
-| ./scripts/deployUpgradeImplementations.s.sol |
-| ./scripts/deployUpgradeImplementationsSingle.s.sol |
-| ./scripts/merklDeploy.s.sol |
-| ./scripts/protocols/hyperdrive/Hyperdrive.s.sol |
-| ./scripts/toggleOperatorBatch.s.sol |
-| ./scripts/utils/Base.s.sol |
-| ./scripts/utils/ChainUtils.s.sol |
-| ./scripts/utils/CreateXConstants.sol |
-| ./scripts/utils/TokensUtils.sol |
-| ./scripts/utils/UpgradeDeploymentBase.s.sol |
-| ./test/DistributionCreator.t.sol |
-| ./test/Fixture.t.sol |
-| ./test/unit/Disputer.t.sol |
-| ./test/unit/DistributionCreator.t.sol |
-| ./test/unit/Distributor.t.sol |
-| ./test/unit/ReferralRegistry.t.sol |
-| ./test/unit/partners/tokenWrappers/NativeTokenWrapper.t.sol |
-| ./test/unit/partners/tokenWrappers/PullTokenWrapperAllow.t.sol |
-| Totals: 59 |
+|[contracts/AccessControlManager.sol](https://github.com/code-423n4/2025-11-merkl/blob/main/contracts/AccessControlManager.sol)|
+|[contracts/Disputer.sol](https://github.com/code-423n4/2025-11-merkl/blob/main/contracts/Disputer.sol)|
+|[contracts/DistributionCreatorWithDistributions.sol](https://github.com/code-423n4/2025-11-merkl/blob/main/contracts/DistributionCreatorWithDistributions.sol)|
+|[contracts/ReferralRegistry.sol](https://github.com/code-423n4/2025-11-merkl/blob/main/contracts/ReferralRegistry.sol)|
+|[contracts/interfaces/\*\*.\*\*](https://github.com/code-423n4/2025-11-merkl/tree/main/contracts/interfaces)|
+|[contracts/mock/\*\*.\*\*](https://github.com/code-423n4/2025-11-merkl/tree/main/contracts/mock)|
+|[contracts/partners/middleman/\*\*.\*\*](https://github.com/code-423n4/2025-11-merkl/tree/main/contracts/partners/middleman)|
+|[contracts/partners/tokenWrappers/\*\*.\*\*](https://github.com/code-423n4/2025-11-merkl/tree/main/contracts/partners/tokenWrappers)|
+|[contracts/struct/\*\*.\*\*](https://github.com/code-423n4/2025-11-merkl/tree/main/contracts/struct)|
+|[contracts/utils/\*\*.\*\*](https://github.com/code-423n4/2025-11-merkl/tree/main/contracts/utils)|
+|[scripts/\*\*.\*\*](https://github.com/code-423n4/2025-11-merkl/tree/main/scripts)|
+|[test/\*\*.\*\*](https://github.com/code-423n4/2025-11-merkl/tree/main/test)|
+| Totals: 60 |
 
+*For a machine-readable version, see [out_of_scope.txt](https://github.com/code-423n4/2025-11-merkl/blob/main/out_of_scope.txt)*
 
 # Additional context
 
@@ -181,59 +139,62 @@ Campaign creators retain full control over:
 
 The contracts include three main trusted roles:
 
-### 1. Governor
-
-- Held by a multisig wallet
-- Possesses administrative rights over the contract
-
-### 2. Guardian
-
-- May be held by externally owned accounts (EOAs)
-- Performs standard operational tasks, including:
-    - Whitelisting tokens
-    - Toggling operator permissions for addresses that lack direct access to these functions
-
-### 3. Updater Addresses
-
-- Authorized to update Merkle roots
-- May be EOAs, as the dispute period provides a safeguard mechanism to detect and prevent malicious root updates before they take effect
-
-✅ SCOUTS: Please format the response above 👆 using the template below👇
-
 | Role                                | Description                       |
 | --------------------------------------- | ---------------------------- |
-| Owner                          | Has superpowers                |
-| Administrator                             | Can change fees                       |
-
-✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
+| Governor                          | - Operated via multisignature wallet<br>- Possesses administrative rights over the distribution contracts and creator                |
+| Guardian                             | - May be held by EOAs<br>- Responsible for operational tasks such as whitelisting of tokens and toggling operator permissions                       |
+| Updater Address | - Authorized to update Merkle roots<br>- May be EOAs as a dispute period exists as a safeguard to prevent malicious root updates before they are finalized |
 
 ## Running tests
 
-Simply run:
-`forge compile`
-`forge test`
+### Prerequisites
 
-You need a .env file set like .env.example and with potentially other entries to have the secrets as they're introduced in the foundry.toml file
+The repository utilizes the `foundry` (`forge`) toolkit to compile its contracts, and contains several dependencies through `foundry` that will be automatically installed whenever a `forge` command is issued.
 
-✅ SCOUTS: Please format the response above 👆 using the template below👇
+The compilation instructions were evaluated with the following toolkit versions:
 
-```bash
-git clone https://github.com/code-423n4/2023-08-arbitrum
-git submodule update --init --recursive
-cd governance
-foundryup
-make install
-make build
-make sc-election-test
-```
-To run code coverage
-```bash
-make coverage
+- forge: `1.4.4-stable`
+- NodeJS: `12.13.0` (any should work)
+
+### Building
+
+After installing all `npm` dependencies through the `npm i` command, the traditional `forge` build command will install the foundry-specific dependencies and build the project:
+
+```sh
+forge build
 ```
 
-✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
+### Tests
+
+The following command can be issued to execute all tests within the repository:
+
+```sh
+forge test
+``` 
+
+## Creating a PoC
+
+The project is composed of two core contracts; a `DistributionCreator` and a `Distribution` contract.
+
+The `C4PoC.t.sol` file contained within the `test/c4` subpath will setup a `DistributionCreator` that permits wardens to demonstrate vulnerabilities pertaining to both the creator and its distribution instances. 
+
+For a submission to be considered valid, the test case **should execute successfully** via the following command:
+
+```bash 
+forge test --match-test submissionValidity
+```
+
+PoCs meant to demonstrate a reverting transaction **must utilize the special `expect` utility functions `forge` exposes**. Failure to do so may result in an invalidation of the submission. 
+
+All PoCs must adhere to the following guidelines:
+
+- The PoC should execute successfully
+- The PoC must not mock any contract-initiated calls
+- The PoC must not utilize any mock contracts in place of actual in-scope implementations
+
 
 ## Miscellaneous
+
 Employees of Merkl and employees' family members are ineligible to participate in this audit.
 
 Code4rena's rules cannot be overridden by the contents of this README. In case of doubt, please check with C4 staff.
